@@ -1,8 +1,7 @@
-import { render, fireEvent, cleanup, prettyDOM } from 'react-testing-library'
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import React from 'react'
 import PhoneInput from "../src";
-import {TextField} from "@material-ui/core";
-import {TextField as TextInput} from "@mui/material"
+import TextField from "@mui/material/TextField";
 
 
 afterEach(cleanup)
@@ -23,7 +22,7 @@ describe('<PhoneInput /> countries props', () => {
   test('has only "us" country in the dropdown', () => {
     const { container: phoneInput } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         onlyCountries={['us']}
       />)
 
@@ -61,7 +60,7 @@ describe('<PhoneInput /> main props', () => {
   test('receive formatted value', () => {
     const { container: phoneInput } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         value='+3802343252'
       />)
     expect(phoneInput.querySelector('input').value).toBe('+380 (23) 432 52')
@@ -99,7 +98,7 @@ describe('<PhoneInput /> other props', () => {
   test('filter european countries with the regions={\'europe\'} prop', () => {
     const { container: phoneInput } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         regions={'europe'}
       />)
 
@@ -126,7 +125,7 @@ describe('<PhoneInput /> other props', () => {
   test('render custom mask with the "masks" prop', () => {
     const { container: phoneInput } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         country='fr'
         onlyCountries={['fr']}
         masks={{'fr': '(...) ..-..-..'}}
@@ -152,7 +151,7 @@ describe('<PhoneInput /> other props', () => {
   test('search correct country via search field', () => {
     const { container: phoneInput } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         enableSearch
       />)
 
@@ -232,13 +231,13 @@ describe('correct value update', () => {
   it('renders one prefix when updated from empty value', () => {
     const { container: phoneInput, rerender } = render(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         value=""
       />)
 
     rerender(
       <PhoneInput
-        component={TextInput}
+        component={TextField}
         value="+49 1701 601234"
       />)
 
