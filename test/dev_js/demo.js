@@ -63,15 +63,6 @@ class Demo extends React.Component {
         `,
           }}
         />
-        <p style={{ fontWeight: "500" }}>
-          Created by{" "}
-          <a
-            style={{ color: "#000" }}
-            href="https://github.com/bl00mber/react-phone-input-2"
-          >
-            Nick Reiley
-          </a>
-        </p>
         <div style={{ display: "inline-block", verticalAlign: "top" }}>
           <p>Exclude countries (usa, canada)</p>
           <PhoneInput

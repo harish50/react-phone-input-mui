@@ -43,6 +43,11 @@ declare module "react-phone-input-material-ui" {
     ): void;
     onKeyDown?(event: React.KeyboardEvent<HTMLInputElement>): void;
     onEnterKeyPress?(event: React.KeyboardEvent<HTMLInputElement>): void;
+    onMount?(
+      value: string,
+      data: CountryData | {},
+      formattedValue: string
+    ): void;
     isValid?:
       | ((
           value: string,
@@ -51,15 +56,10 @@ declare module "react-phone-input-material-ui" {
           hiddenAreaCodes: object[]
         ) => boolean | string)
       | boolean;
-    onMount?(
-      value: string,
-      data: CountryData | {},
-      formattedValue: string
-    ): void;
   }
 
   export interface PhoneInputProps extends PhoneInputEventsProps, Style {
-    component: React.ComponentType;
+    component: React.ComponentType<any>;
     country?: string | number;
     value?: string | null;
 
@@ -85,10 +85,10 @@ declare module "react-phone-input-material-ui" {
 
     regions?: string | string[];
 
-    inputProps?: object;
-    localization?: object;
-    masks?: object;
-    areaCodes?: object;
+    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+    localization?: { [key: string]: string };
+    masks?: { [key: string]: string };
+    areaCodes?: { [key: string]: string[] };
 
     preserveOrder?: string[];
 
@@ -100,7 +100,7 @@ declare module "react-phone-input-material-ui" {
     renderStringAsFlag?: string;
     autocompleteSearch?: boolean;
     jumpCursorToEnd?: boolean;
-    priority?: object;
+    priority?: { [key: string]: number };
     enableAreaCodeStretch?: boolean;
     enableClickOutside?: boolean;
     showDropdown?: boolean;

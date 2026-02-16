@@ -1,8 +1,9 @@
 {
   "name": "react-phone-input-material-ui",
   "description": "A material-ui react component to format phone numbers. Based on react-phone-input-2",
-  "version": "2.18.1",
+  "version": "4.0.0",
   "main": "lib/lib.js",
+  "module": "lib/lib.esm.js",
   "typings": "index.d.ts",
   "scripts": {
     "test": "jest",
@@ -100,7 +101,7 @@
   },
   "peerDependenciesMeta": {
     "@emotion/react": {
-      "optional": true
+      "optional": false
     },
     "@emotion/styled": {
       "optional": true

@@ -1,4 +1,3 @@
-
 # react-phone-input-material-ui
 
 Highly customizable phone input component with auto formatting. Based on the wonderful [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2) package.
@@ -24,7 +23,7 @@ yarn add react-phone-input-material-ui
 
 ## Usage with Material UI
 
-Mandatory props: `value` and `onChange` for controlling field; `component`, ideally `TextField`
+Mandatory props: `value` and `onChange` for controlling field; `component`, which should be `TextField` from `@mui/material`.
 
 ```jsx
 import React from 'react';
@@ -51,6 +50,14 @@ function PhoneField(props) {
         onChange={onChange}
         inputStyle={{ margin: '10px 0' }}
         component={TextField}
+        inputProps={{
+          sx: {
+            margin: '10px 0',
+          },
+        }}
+        dropdownStyle={{
+          fontFamily: 'sans-serif',
+        }}
       />
     </React.Fragment>
   );
@@ -58,6 +65,19 @@ function PhoneField(props) {
 
 export default PhoneField;
 ```
+
+---
+
+
+### MUI Compatibility Table
+
+| `react-phone-input-material-ui` Version | Supported MUI Version |
+|-----------------------------------------|----------------------|
+| `^3.0.0`                                | `v5`, `v6`           |
+| `^2.x`                                  | `v4`, `v5`           |
+| `^1.x`                                  | `v4`                 |
+
+---
 
 **Forked from [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2). All the features of [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2) are available. I will be update this library frequently to upto date with origin library**
 
