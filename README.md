@@ -2,9 +2,7 @@
 
 Highly customizable phone input component with auto formatting. Based on the wonderful [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2) package.
 
-Supports Material-UI v5 and v6.
-
----
+Supports MUI v5-v7 (and legacy `@material-ui/core` v4 as optional peer dependency).
 
 ### Original look:
 
@@ -30,7 +28,8 @@ Mandatory props: `value` and `onChange` for controlling field; `component`, whic
 ```jsx
 import React from 'react';
 import ReactPhoneInput from 'react-phone-input-material-ui';
-import { TextField } from '@mui/material';
+import TextField from '@mui/material/TextField';
+
 
 function PhoneField(props) {
   const { value, defaultCountry, onChange } = props;
@@ -49,6 +48,7 @@ function PhoneField(props) {
         value={value}
         defaultCountry={defaultCountry || 'gb'}
         onChange={onChange}
+        inputStyle={{ margin: '10px 0' }}
         component={TextField}
         inputProps={{
           sx: {

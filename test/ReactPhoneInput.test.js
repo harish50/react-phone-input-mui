@@ -1,10 +1,7 @@
-import { render, fireEvent, cleanup, prettyDOM } from 'react-testing-library'
+import { render, fireEvent } from '@testing-library/react';
 import React from 'react'
-import PhoneInput from "../src";
-import { TextField } from '@mui/material';
-
-
-afterEach(cleanup)
+import PhoneInput from '../src';
+import TextField from '@mui/material/TextField';
 
 describe('<PhoneInput /> countries props', () => {
   test('has not "us" country in the dropdown', () => {
